@@ -134,9 +134,9 @@
 // Tbuf        4.7us            1.3us   Bus free time between a stop and start condition
 //
 
-`include "i2c_master_defines.sv"
+`include "cva6_i2c_master_defines.sv"
 
-module i2c_master_bit_ctrl
+module cva6_i2c_master_bit_ctrl
 (
     input             clk,      // system clock
     input             nReset,   // asynchronous active low reset

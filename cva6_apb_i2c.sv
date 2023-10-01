@@ -1,4 +1,4 @@
-`include "i2c_master_defines.sv"
+`include "cva6_i2c_master_defines.sv"
 
 `define REG_CLK_PRESCALER 3'b000 //BASEADDR+0x00
 `define REG_CTRL          3'b001 //BASEADDR+0x04
@@ -7,7 +7,7 @@
 `define REG_TX            3'b100 //BASEADDR+0x10
 `define REG_CMD           3'b101 //BASEADDR+0x14
 
-module apb_i2c
+module cva6_apb_i2c
 #(
     parameter APB_ADDR_WIDTH = 12  //APB slaves are 4KB by default
 )
@@ -140,7 +140,7 @@ module apb_i2c
     assign s_ien     = r_ctrl[6];
 
     // hookup byte controller block
-    i2c_master_byte_ctrl byte_controller 
+    cva6_i2c_master_byte_ctrl byte_controller 
     (
             .clk      ( HCLK         ),
             .nReset   ( HRESETn      ),
